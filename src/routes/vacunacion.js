@@ -32,9 +32,9 @@ router.get('/vacunacion/:id', (req, res) => {
 // Actualizar un producto
 router.put('/vacunacion/:id', (req, res) => { 
     const { id } = req.params;
-    const { numeroServicio, nombreCliente, nombreEspecie, valorVacuna, cantidadVacunas } = req.body;
+    const { numeroServicio, nombreCliente, nombreEspecie, valorVacuna, cantidadVacunas, precioActualDolar } = req.body;
     vacunacionSchema
-        .updateOne({ _id: id }, { $set: {numeroServicio, nombreCliente, nombreEspecie, valorVacuna, cantidadVacunas } })
+        .updateOne({ _id: id }, { $set: {numeroServicio, nombreCliente, nombreEspecie, valorVacuna, cantidadVacunas, precioActualDolar} })
         .then((data) => res.json(data))
         .catch((error) => res.json({ message: error }));
 });

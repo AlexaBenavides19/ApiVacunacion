@@ -25,6 +25,10 @@ const vacunacionSchema = mongoose.Schema({
     cantidadVacunas: {
         type: String,
         required: [true, 'El campo de cantidad Vacunas es obligatorio']
+    },
+    precioActualDolar:{
+        type: String,
+        required: [true, 'El campo PrecioActual del Dolar es obligatorio']
     }
 });
 
